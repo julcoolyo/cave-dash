@@ -31,9 +31,10 @@ jobs:
         working-directory: CaveDash-Desktop
         run: npm run dist:win
 
-      - name: Save installer
+       - name: Save installer
         uses: actions/upload-artifact@v4
         with:
           name: Cave-Dash-Windows-Installer
-          path: CaveDash-Desktop/dist/*.exe
+          path: |
+            CaveDash-Desktop/**/*.exe
           if-no-files-found: error
