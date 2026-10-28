@@ -8,12 +8,11 @@ on:
       - "v*"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build-windows:
     runs-on: windows-latest
-
     steps:
       - name: Download repository
         uses: actions/checkout@v4
@@ -21,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install game dependencies
         working-directory: CaveDash-Desktop
@@ -31,10 +30,9 @@ jobs:
         working-directory: CaveDash-Desktop
         run: npm run dist:win
 
-       - name: Save installer
+      - name: Save installer
         uses: actions/upload-artifact@v4
         with:
           name: Cave-Dash-Windows-Installer
-          path: |
-            CaveDash-Desktop/**/*.exe
+          path: 'CaveDash-Desktop/**/*.exe'
           if-no-files-found: error
