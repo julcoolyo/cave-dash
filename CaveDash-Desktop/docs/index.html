@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b18">
+<meta name="description" content="Cave Dash — a neon cavern rhythm platformer. Jump, dodge, customize your icon, and build your own levels.">
+<title>Cave Dash — Enter the Glow</title>
+<style>
+:root{color-scheme:dark;--bg:#080b18;--panel:#10172b;--line:#243452;--cyan:#48f3ff;--lime:#c5ff4a;--text:#f3f7ff;--muted:#a9b7d2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#17315a 0,transparent 48%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.12em}.mark{width:35px;height:35px;border:2px solid var(--cyan);transform:rotate(45deg);border-radius:8px;box-shadow:0 0 22px #48f3ff55;position:relative}.mark:after{content:"";position:absolute;inset:8px;background:var(--lime);border-radius:2px}.nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:.94rem}.nav a:hover{color:var(--cyan)}
+.hero{padding:72px 0 78px;text-align:center;position:relative;overflow:hidden}.eyebrow{color:var(--lime);font-weight:800;text-transform:uppercase;letter-spacing:.22em;font-size:.76rem}.hero h1{font-size:clamp(3.4rem,10vw,7.3rem);line-height:.98;letter-spacing:-.075em;margin:20px 0;background:linear-gradient(100deg,#fff 20%,var(--cyan) 56%,var(--lime));color:transparent;background-clip:text}.hero p{max-width:650px;margin:22px auto;color:var(--muted);font-size:clamp(1rem,2.3vw,1.2rem)}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:850;border:1px solid var(--line);transition:transform .15s ease,box-shadow .15s ease}.btn:hover{transform:translateY(-2px)}.primary{background:var(--cyan);color:#07101c;border-color:var(--cyan);box-shadow:0 0 28px #48f3ff30}.secondary{background:#10172b;color:var(--text)}.fine{font-size:.82rem!important;color:#8797b8!important;margin-top:14px!important}
+.scene{margin:0 auto 22px;width:min(740px,100%);height:230px;border:1px solid #294263;border-radius:22px;position:relative;overflow:hidden;background:linear-gradient(180deg,#101a35,#090e20);box-shadow:0 22px 70px #0008,inset 0 0 60px #48f3ff0c}.scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#24415a55 1px,transparent 1px),linear-gradient(90deg,#24415a55 1px,transparent 1px);background-size:34px 34px;transform:perspective(350px) rotateX(24deg) scale(1.4);transform-origin:bottom}.cave{position:absolute;left:-5%;right:-5%;bottom:-1px;height:100px;background:#0a1124;clip-path:polygon(0 40%,8% 20%,15% 60%,25% 8%,34% 50%,44% 0,53% 60%,64% 15%,74% 55%,84% 5%,93% 42%,100% 22%,100% 100%,0 100%);border-top:2px solid var(--cyan);filter:drop-shadow(0 0 10px var(--cyan))}.cube{position:absolute;left:30%;bottom:78px;width:45px;height:45px;border:3px solid var(--lime);background:#c5ff4a22;box-shadow:0 0 24px #c5ff4a66;transform:rotate(45deg);border-radius:5px;animation:bob 2.2s ease-in-out infinite}.orb{position:absolute;left:58%;bottom:105px;width:18px;height:18px;border-radius:50%;background:var(--cyan);box-shadow:0 0 25px var(--cyan)}.spike{position:absolute;right:22%;bottom:80px;width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:45px solid #ff5fc8;filter:drop-shadow(0 0 9px #ff5fc8)}@keyframes bob{50%{transform:translateY(-12px) rotate(135deg)}}
+section{padding:60px 0}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.04em;margin:5px 0}.section-head p{color:var(--muted);margin:0 auto;max-width:620px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#111a30,#0b1020)}.card .symbol{font-size:1.7rem}.card h3{margin:10px 0 6px}.card p{color:var(--muted);margin:0;font-size:.95rem}.download{background:linear-gradient(135deg,#121f38,#101328);border:1px solid #294263;border-radius:24px;padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}.download h2{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.05em;line-height:1.05;margin:10px 0}.download p{color:var(--muted)}.requirements{border-left:1px solid var(--line);padding-left:24px;color:var(--muted);font-size:.94rem}.requirements strong{color:var(--text)}.notice{border:1px solid #5d4a28;background:#211b12;color:#f0d9a9;padding:14px 16px;border-radius:12px;font-size:.9rem;margin-top:18px}.footer{border-top:1px solid #1c2941;margin-top:65px;padding:25px 0 40px;color:#8291ae;font-size:.85rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.download{grid-template-columns:1fr}.requirements{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.nav a{margin-left:10px}.hero{padding-top:48px}.scene{height:190px}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+  <div class="brand"><span class="mark" aria-hidden="true"></span><span>CAVE DASH</span></div>
+  <nav aria-label="Main navigation"><a href="#features">Features</a><a href="#download">Download</a></nav>
+</header>
+<main>
+<section class="hero wrap">
+  <div class="eyebrow">Find your rhythm. Own the cave.</div>
+  <h1>ENTER THE<br>GLOW.</h1>
+  <p>A neon-cavern platform game where sharp timing, glowing icons, and your own level ideas collide.</p>
+  <div class="scene" role="img" aria-label="Neon geometric cave with a glowing cube, orb and spike"><div class="cube"></div><div class="orb"></div><div class="spike"></div><div class="cave"></div></div>
+  <div class="actions"><a class="btn primary" href="#download">↓ Get Cave Dash</a><a class="btn secondary" href="#features">Explore features ↓</a></div>
+  <p class="fine">Windows desktop edition · Installer availability depends on the published release</p>
+</section>
+<section id="features" class="wrap">
+  <div class="section-head"><div class="eyebrow">Your run, your rules</div><h2>Built to play. Made to create.</h2><p>Dash through glowing caves, shape your look, and experiment with your own obstacle layouts.</p></div>
+  <div class="grid">
+    <article class="card"><div class="symbol">✦</div><h3>Icon Garage</h3><p>Choose a geometric icon and tune its body and glow colors to make it yours.</p></article>
+    <article class="card"><div class="symbol">⌁</div><h3>Main Levels</h3><p>Explore handcrafted cavern stages filled with neon hazards and rhythm-platforming challenges.</p></article>
+    <article class="card"><div class="symbol">▦</div><h3>Level Forge</h3><p>Place blocks, spikes, orbs, and pads; then save or export your own level ideas.</p></article>
+  </div>
+</section>
+<section id="download" class="wrap">
+  <div class="download">
+    <div><div class="eyebrow">Ready when you are</div><h2>Make the cave yours.</h2><p>Download the Windows installer from the official Cave Dash release page once a build has been published.</p><div class="actions" style="justify-content:flex-start"><a class="btn primary" href="https://github.com/YOUR-GITHUB-USERNAME/cave-dash/releases/latest" rel="noopener">Windows download ↗</a></div><div class="notice"><strong>Installer not published yet.</strong> This button becomes the real download when you publish Cave Dash to your GitHub repository and replace <code>YOUR-GITHUB-USERNAME</code> with your username.</div></div>
+    <div class="requirements"><strong>Windows edition</strong><p>Windows 10 / 11<br>Desktop installer (NSIS)<br>Creates a Start Menu entry and desktop shortcut</p><strong>Safety note</strong><p>Only install a build you trust. The initial build may be unsigned and could still be blocked by Smart App Control. Don't disable Windows security to install it.</p></div>
+  </div>
+</section>
+</main>
+<footer class="wrap footer"><span>© Cave Dash</span><span>Original neon-cavern platforming project</span></footer>
+</body>
+</html>
